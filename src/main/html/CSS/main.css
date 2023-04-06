@@ -1,0 +1,53 @@
+
+body {
+background-color: darkblue;
+}
+
+li {
+background-color: yellow;
+}
+
+h3, h1 {
+  background-color: lightblue;
+  padding: 0%;
+  padding-right: 1%;
+  margin: 0%;
+}
+
+.stats h1 {
+    background-color: orange;
+    float: left;
+    text-align: right;
+    display: block;
+    margin: 1%;
+}
+
+ul {
+    list-style-type: circle;
+    list-style-position: inside;
+      margin: 0;
+      padding: 0;
+      padding-right: 0;
+}
+
+.column {
+  float: left;
+  width: 10%;
+  padding: 0px;
+}
+
+.numbers {
+
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
