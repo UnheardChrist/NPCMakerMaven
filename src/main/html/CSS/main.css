@@ -20,27 +20,13 @@ width: 75%;
 
 .stats h1 , table{
     background-color: orange;
-    text-align: left;
-    margin: 0;
-}
-
-.numbers table {
-position: relative;
-top: 0%;
-left: 0%;
-margin 0;
-padding-bottom: 0px;
-margin-bottom: 1px;
-width: 100%;
 }
 
 .numbers td {
-text-align: left;
 margin: 0;
 padding: 0;
 padding-left: 1px;
 padding-right: 1px;
-
 }
 
 hr {
@@ -49,19 +35,23 @@ width: 100%;
 
 .column {
   float: left;
-  width: 35%;
+  width: 37%;
   padding: 0px;
+}
+
+.rail {
+float: left;
+width: 13%;
+padding: 0px;
 }
 
 .numbers h1 {
     background-color: orange;
     padding: 0;
     padding-right: 10px;
-    margin: 0;
-    float: left;
     font-size: 3vw;
-
     text-align: center;
+
 }
 
 @media screen and (min-width: 1600px) {
@@ -70,17 +60,31 @@ width: 100%;
   }
 }
 
+.under h2, tr{
+text-align: center;
+padding: 0px;
+margin: 0px;
+}
+
+.numbers {
+margin-left: auto;
+margin-right: auto;
+}
+
 .numbers p, .numbers pre{
     float: left;
-    text-align: left;
-    padding: 0;
     margin: 0;
+}
+
+
+.equipment {
+    background-color: green;
 }
 
 .flex {
   display: flex;
   flex-direction: row;
-  align-items: center;
+
   background-color: red;
 }
 
