@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f1e9faa6-d59b-4bdc-9839-515803e5c334" name="Changes" comment="Main Character Page started Layout.">
+    <list default="true" id="f1e9faa6-d59b-4bdc-9839-515803e5c334" name="Changes" comment="Stat and Skill table layout mostly complete.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/html/CSS/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/html/CSS/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/html/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/html/main.html" afterDir="false" />
