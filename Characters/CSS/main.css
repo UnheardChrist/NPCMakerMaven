@@ -1,0 +1,106 @@
+
+body {
+background-color: darkblue;
+}
+
+li {
+background-color: yellow;
+}
+
+h3, h1 {
+  background-color: lightblue;
+  padding: 0%;
+  padding-right: 1%;
+  margin: 0%;
+}
+
+.stats {
+width: 75%;
+}
+
+.stats h1 , table{
+    background-color: orange;
+}
+
+.numbers td {
+margin: 0;
+padding: 0;
+padding-left: 1px;
+padding-right: 1px;
+}
+
+hr {
+width: 100%;
+}
+
+.column {
+  float: left;
+  width: 37%;
+  padding: 0px;
+}
+
+.rail {
+float: left;
+width: 13%;
+padding: 0px;
+}
+
+.numbers h1{
+    background-color: orange;
+    padding: 0;
+    padding-right: 10px;
+    font-size: 3vw;
+    text-align: center;
+}
+
+@media screen and (min-width: 1600px) {
+  .numbers h1{
+     font-size: 200%;
+  }
+}
+
+.under h2 {
+       font-size: 2.2vw;
+       margin: 1%;
+       text-align: center;
+}
+
+@media screen and (min-width: 1600px) {
+  .under h2 {
+     font-size: 100%;
+  }
+}
+
+.under tr{
+text-align: center;
+padding: 0px;
+margin: 0px;
+}
+
+.numbers {
+margin-left: auto;
+margin-right: auto;
+}
+
+.numbers p, .numbers pre{
+    float: left;
+    margin: 0;
+}
+
+
+.equipment {
+    background-color: green;
+}
+
+.flex {
+  display: flex;
+  flex-direction: row;
+
+  background-color: red;
+}
+
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}

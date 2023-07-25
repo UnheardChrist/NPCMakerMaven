@@ -26,6 +26,7 @@ public class Main {
 
         writeHTML writeHTML = new writeHTML(document, new File("firstChar.html"),
                 new File("Characters"));
+
         Document charInCharsFolder = writeHTML.openFile();
 
         Stats stats = new Stats(charInCharsFolder);
@@ -41,6 +42,7 @@ class Stats {
             "Intelligence", "Wisdom", "Charisma"};
     Element statElement[];
     int stats[] = {0, 0, 0, 0, 0, 0};
+    int modifiers[] = {0, 0, 0, 0, 0, 0};
     public Stats(Document document) throws IOException, URISyntaxException {
         this.document = document;
     }
@@ -58,7 +60,7 @@ class Stats {
             stat = document.getElementById(statNames[i]);
             if(stat != null) {
                 System.out.println(stat.text());
-                stat.text(String.valueOf(stats[i]));
+                stat.text(String.valueOf(stats[i]) + " (" + String.valueOf(modifiers[i]) + ")");
                 System.out.println(stat.text());
             }
         }
@@ -103,15 +105,53 @@ class Stats {
     }
     void genAllStats() {
         int tempStats[] = new int[6];
+        int modStats[] = new int[6];
         int i;
 
         for(i = 0; i < stats.length; i++) {
             tempStats[i] = genStat();
+            modStats[i] = abilityModifier(tempStats[i]);
         }
+
     }
     int abilityModifier(int stat) {
         return (int) floor((stat - 10) / 2);
     }
+}
+
+class character {
+    private int level;
+    private int maxHp;
+
+    protected int getMaxHp() {
+        return this.maxHp;
+    }
+    protected void setMaxHp(int maxHp) {
+        this.maxHp += maxHp;
+    }
+    protected int getLevel() {
+        return this.level;
+    }
+    protected void setLevel(int level) {
+        this.level = level;
+    }
+    charClass charClass;
+}
+
+class charClass {
+    String charClass;
+    charClass(String charClass) {
+        this.charClass = charClass;
+    }
+}
+
+class race extends character{
+    String race;
+    int age, size, speed;
+    race(String race) {
+        this.race = race;
+    }
+
 }
 
 class writeHTML {
