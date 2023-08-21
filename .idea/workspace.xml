@@ -4,13 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f1e9faa6-d59b-4bdc-9839-515803e5c334" name="Changes" comment="Added rails to both sides">
+    <list default="true" id="f1e9faa6-d59b-4bdc-9839-515803e5c334" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/subClasses.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/subClasses.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <excluded-from-favorite>
@@ -49,7 +57,7 @@
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
-        <option name="accountId" value="0f9274f2-9cc0-4fc5-bc07-9d08d14cda8b" />
+        <option name="accountId" value="9d859de8-7659-45d0-8c7d-49c464a5abf2" />
         <option name="url" value="https://github.com/UnheardChrist/NPCMakerMaven.git" />
       </UrlAndAccount>
     </option>
@@ -75,7 +83,7 @@
     &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/jesuc/Documents/Java/NPCMakerMaven&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/101122515/Documents/RandomJavaForNoReason/NPCMakerMaven/Characters&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
@@ -84,7 +92,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\jesuc\Documents\Java\NPCMakerMaven\Characters" />
+      <recent name="C:\Users\101122515\Documents\RandomJavaForNoReason\NPCMakerMaven\Characters" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\101122515\Documents\RandomJavaForNoReason\NPCMakerMaven\src\main\resources" />
@@ -122,7 +130,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681752653017</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Class to roll various dices creates, class to write to file and/or create it, and part of the stat class is made. get and setting the stats is done, make the generating of them.">
+      <created>1681938700493</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1681938700493</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -140,7 +155,8 @@
     <MESSAGE value="One Branch" />
     <MESSAGE value="Main Character Page started Layout." />
     <MESSAGE value="Starting jsoup." />
-    <option name="LAST_COMMIT_MESSAGE" value="Starting jsoup." />
+    <MESSAGE value="Class to roll various dices creates, class to write to file and/or create it, and part of the stat class is made. get and setting the stats is done, make the generating of them." />
+    <option name="LAST_COMMIT_MESSAGE" value="Class to roll various dices creates, class to write to file and/or create it, and part of the stat class is made. get and setting the stats is done, make the generating of them." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
