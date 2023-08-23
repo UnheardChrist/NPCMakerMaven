@@ -1,14 +1,14 @@
-Name,Strength,Dexterity,Constitution,Intellignece,Wisdom,Charisma,Age ,Size,Speed,Traits
-Hill Dwarf,0,0,2,0,1,0,1,Medium,25,Dwarven Toughness
-Mountain Dwarf,2,0,2,0,0,0,1,Medium,25,Dwarven Armor Training
-High Elf,0,2,0,1,0,0,1,Medium,30,"Elf Weapon Training, Cantrip, Extra Language"
-Wood Elf,0,2,0,0,1,0,1,Medium,35,"Elf Weapon Training, Fleet of Foot, Mask of the Wild"
-Lightfoot,0,2,0,0,0,1,1,Medium,25,Naturally Stealthy
-Stout,0,2,1,0,0,0,1,Medium,25,Stout Resilience
-Human,1,1,1,1,1,1,1,Medium,30,
-Dragonborn,2,0,0,0,0,1,1,Medium,30,
-Rock Gnome,0,0,1,2,0,0,1,Medium,25,"Artificer's Lore, Tinker"
-Forest Gnome,0,1,0,2,0,0,1,Medium,25,"Natural Illusionist, Speak with Small Beasts"
-Half-Elf,-1,-1,-1,-1,-1,2,1,Medium,30,
-Half-Orc,2,0,1,0,0,0,1,Medium,30,
-Tiefling,0,0,0,1,0,2,1,Medium,30,
+Race Name,Name,Strength,Dexterity,Constitution,Intellignece,Wisdom,Charisma,Age ,Size,Speed,Traits
+Dwarf,Hill Dwarf,0,0,2,0,1,0,1,Medium,25,Dwarven Toughness
+Dwarf,Mountain Dwarf,2,0,2,0,0,0,1,Medium,25,Dwarven Armor Training
+Elf,High Elf,0,2,0,1,0,0,1,Medium,30,"Elf Weapon Training, Cantrip, Extra Language"
+Elf,Wood Elf,0,2,0,0,1,0,1,Medium,35,"Elf Weapon Training, Fleet of Foot, Mask of the Wild"
+Halfling,Lightfoot,0,2,0,0,0,1,1,Medium,25,Naturally Stealthy
+Halfling,Stout,0,2,1,0,0,0,1,Medium,25,Stout Resilience
+Human,Human,1,1,1,1,1,1,1,Medium,30,
+Dragonborn,Dragonborn,2,0,0,0,0,1,1,Medium,30,
+Gnome,Rock Gnome,0,0,1,2,0,0,1,Medium,25,"Artificer's Lore, Tinker"
+Gnome,Forest Gnome,0,1,0,2,0,0,1,Medium,25,"Natural Illusionist, Speak with Small Beasts"
+Half-Elf,Half-Elf,-1,-1,-1,-1,-1,2,1,Medium,30,
+Half-Orc,Half-Orc,2,0,1,0,0,0,1,Medium,30,
+Tiefling,Tiefling,0,0,0,1,0,2,1,Medium,30,
