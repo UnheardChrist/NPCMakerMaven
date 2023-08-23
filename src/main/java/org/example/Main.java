@@ -3,12 +3,10 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.Arrays;
 import java.util.Random;
 
@@ -31,7 +29,7 @@ public class Main {
 
         Stats stats = new Stats(charInCharsFolder);
         stats.setStatsToHTML(statsArray);
-
+        readSpecifiedLine.readFileLine((byte) 2);
         writeHTML.writeToFile();
     }
 }
@@ -146,11 +144,17 @@ class charClass {
 }
 
 class race extends character{
+    Random rand = new Random();
+    short max, chosen;
+    short min = 1;
     String race;
     int age, size, speed;
-    race(String race) {
-        this.race = race;
+    String line;
+    race() throws IOException {
+        chosen = (short) (rand.nextInt(max - min + 1) + min);
+        race = readSpecifiedLine.readFileLine(chosen);
     }
+
 
 }
 
@@ -182,6 +186,32 @@ class writeHTML {
         Files.writeString(filePath.toPath(), document.outerHtml());
     }
 
+}
+
+class readSpecifiedLine {
+    static URL path = ClassLoader.getSystemResource("DataFiles/Race.csv");
+    static File file;
+    static BufferedReader bufferedReader;
+
+    static {
+        try {
+            file = new File(path.toURI());
+            bufferedReader = new BufferedReader(new FileReader(file));
+        } catch (URISyntaxException | FileNotFoundException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    static byte i = 0;
+    static String line;
+    static String readFileLine(short loc) throws IOException {
+        while((line = bufferedReader.readLine()) != null && i != loc)
+        {
+            i++;
+        }
+        System.out.println(line);
+        return line;
+    }
 }
 
 class diceGen {
