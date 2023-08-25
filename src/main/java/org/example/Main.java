@@ -29,7 +29,7 @@ public class Main {
 
         Stats stats = new Stats(charInCharsFolder);
         stats.setStatsToHTML(statsArray);
-        readSpecifiedLine.readFileLine((byte) 2);
+        race test = new race();
         writeHTML.writeToFile();
     }
 }
@@ -151,10 +151,11 @@ class race extends character{
     int age, size, speed;
     String line;
     race() throws IOException {
+        max = readCSVLine.amount();
         chosen = (short) (rand.nextInt(max - min + 1) + min);
-        race = readSpecifiedLine.readFileLine(chosen);
+        this.race = readCSVLine.readFileLine(chosen);
+        System.out.println(race);
     }
-
 
 }
 
@@ -188,7 +189,7 @@ class writeHTML {
 
 }
 
-class readSpecifiedLine {
+class readCSVLine {
     static URL path = ClassLoader.getSystemResource("DataFiles/Race.csv");
     static File file;
     static BufferedReader bufferedReader;
@@ -205,12 +206,23 @@ class readSpecifiedLine {
     static byte i = 0;
     static String line;
     static String readFileLine(short loc) throws IOException {
+        bufferedReader.reset();
         while((line = bufferedReader.readLine()) != null && i != loc)
         {
             i++;
         }
-        System.out.println(line);
+        bufferedReader.close();
         return line;
+    }
+
+    static short amount() throws IOException {
+        short i = 0;
+        bufferedReader.mark(50000);
+        while((line = bufferedReader.readLine()) != null)
+        {
+           i++;
+        }
+        return (short) (i - 1);
     }
 }
 
