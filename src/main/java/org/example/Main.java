@@ -8,6 +8,7 @@ import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.file.Files;
 import java.util.Arrays;
+import java.util.Objects;
 import java.util.Random;
 
 import static java.lang.Math.floor;
@@ -20,7 +21,7 @@ public class Main {
         File input = new File(path.toURI());
         Document document = Jsoup.parse(input, "UTF-8");
 
-        int statsArray[] = {1, 2, 3, 4, 5, 6};
+        int[] statsArray = {1, 2, 3, 4, 5, 6};
 
         writeHTML writeHTML = new writeHTML(document, new File("firstChar.html"),
                 new File("Characters"));
@@ -36,11 +37,11 @@ public class Main {
 
 class Stats {
     Document document;
-    String statNames[] = {"Strength", "Dexterity", "Constitution",
+    String[] statNames = {"Strength", "Dexterity", "Constitution",
             "Intelligence", "Wisdom", "Charisma"};
-    Element statElement[];
-    int stats[] = {0, 0, 0, 0, 0, 0};
-    int modifiers[] = {0, 0, 0, 0, 0, 0};
+    Element[] statElement;
+    int[] stats = {0, 0, 0, 0, 0, 0};
+    int[] modifiers = {0, 0, 0, 0, 0, 0};
     public Stats(Document document) throws IOException, URISyntaxException {
         this.document = document;
     }
@@ -48,10 +49,10 @@ class Stats {
     public void setStatsFromHTML() {
         int i;
         for(i = 0; i < statNames.length; i++) {
-            stats[i] = Integer.parseInt(document.getElementById(statNames[i]).text());
+            stats[i] = Integer.parseInt(Objects.requireNonNull(document.getElementById(statNames[i])).text());
         }
     }
-    void setStatsToHTML(int stats[]) {
+    void setStatsToHTML(int[] stats) {
         int i;
         Element stat;
         for(i = 0; i < statNames.length; i++) {
@@ -63,7 +64,7 @@ class Stats {
             }
         }
     }
-    public void setStats(int stats[]) {
+    public void setStats(int[] stats) {
         this.stats = stats;
     }
     public void setStats(int statValue, String stat) {
@@ -89,21 +90,21 @@ class Stats {
     int getIndex(String stat) {
         int i;
         for(i = 0; i < statNames.length; i++) {
-            if(statNames[i] == stat) {
+            if(Objects.equals(statNames[i], stat)) {
                 return i;
             }
         }
         return -1;
     }
     int genStat() {
-        int rolled[] = {d6(), d6(), d6(), d6()};
+        int[] rolled = {d6(), d6(), d6(), d6()};
         Arrays.sort(rolled);
 
         return Arrays.stream(rolled).sum() - rolled[0];
     }
     void genAllStats() {
-        int tempStats[] = new int[6];
-        int modStats[] = new int[6];
+        int[] tempStats = new int[6];
+        int[] modStats = new int[6];
         int i;
 
         for(i = 0; i < stats.length; i++) {
