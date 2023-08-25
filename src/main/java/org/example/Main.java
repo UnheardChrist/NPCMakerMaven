@@ -7,9 +7,7 @@ import java.io.*;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.file.Files;
-import java.util.Arrays;
-import java.util.Objects;
-import java.util.Random;
+import java.util.*;
 
 import static java.lang.Math.floor;
 import static org.example.diceGen.d6;
@@ -148,14 +146,28 @@ class race extends character{
     Random rand = new Random();
     short max, chosen;
     short min = 1;
-    String race;
-    int age, size, speed;
-    String line;
+    String race, line;
+    String[] lineData;
+    //List<String> traits = new List<String>();
+    ArrayList<String> traits = new ArrayList<String>();
+    readCSVLine raceCSV = new readCSVLine("DataFiles/Race.csv");
+    int age, size, speed, i;
     race() throws IOException {
-        max = readCSVLine.amount();
+
+        max = raceCSV.amount();
         chosen = (short) (rand.nextInt(max - min + 1) + min);
-        this.race = readCSVLine.readFileLine(chosen);
+        line = raceCSV.readFileLine(chosen);
+        System.out.println(line);
+        lineData = line.split(",");
+        race = lineData[0];
         System.out.println(race);
+        //System.out.println(line);
+        if(line.contains("\"")) {
+            lineData = line.split("\"");
+        }
+        traits.add(lineData[1]);
+        System.out.println(traits);
+
     }
 
 }
@@ -191,11 +203,14 @@ class writeHTML {
 }
 
 class readCSVLine {
-    static URL path = ClassLoader.getSystemResource("DataFiles/Race.csv");
-    static File file;
-    static BufferedReader bufferedReader;
+    String fileName;
 
-    static {
+    File file;
+
+    BufferedReader bufferedReader;
+    readCSVLine(String fileName) {
+        this.fileName = fileName;
+        URL path = ClassLoader.getSystemResource(fileName);
         try {
             file = new File(path.toURI());
             bufferedReader = new BufferedReader(new FileReader(file));
@@ -204,9 +219,9 @@ class readCSVLine {
         }
     }
 
-    static byte i = 0;
-    static String line;
-    static String readFileLine(short loc) throws IOException {
+    byte i = 0;
+    String line;
+    String readFileLine(short loc) throws IOException {
         bufferedReader.reset();
         while((line = bufferedReader.readLine()) != null && i != loc)
         {
@@ -216,7 +231,7 @@ class readCSVLine {
         return line;
     }
 
-    static short amount() throws IOException {
+    short amount() throws IOException {
         short i = 0;
         bufferedReader.mark(50000);
         while((line = bufferedReader.readLine()) != null)
