@@ -146,11 +146,13 @@ class race extends character{
     Random rand = new Random();
     short max, chosen;
     short min = 1;
-    String race, line;
+    String race, line, subRace;
     String[] lineData;
+    short[] subRaces;
     //List<String> traits = new List<String>();
     ArrayList<String> traits = new ArrayList<String>();
     readCSVLine raceCSV = new readCSVLine("DataFiles/Race.csv");
+    readCSVLine subRaceCSV = new readCSVLine("DataFiles/SubRace.csv");
     int age, size, speed, i;
     race() throws IOException {
 
@@ -167,7 +169,29 @@ class race extends character{
         }
         traits.add(lineData[1]);
         System.out.println(traits);
+        subRaces = subRaceCSV.findLinesNames(race);
+        System.out.println(subRaces[0]);
+        System.out.println(subRaces[1]);
 
+
+        for(i = 0; i < subRaces.length && subRaces[i] != 0; i++) {
+            min = 0;
+            max = (short) ((short) i);
+        }
+        if(max == 0) {
+            max = min;
+        }
+        System.out.println(min + " and " + max);
+        chosen = (short) (rand.nextInt(max - min + 1) + min);
+        System.out.println(chosen);
+        line = subRaceCSV.readFileLine(subRaces[chosen]);
+        lineData = line.split(",");
+        System.out.println(lineData[0]);
+        System.out.println(lineData[1]);
+        System.out.println(lineData[2]);
+        System.out.println(lineData[3]);
+        subRace = lineData[1];
+        System.out.println(subRace);
     }
 
 }
@@ -239,6 +263,23 @@ class readCSVLine {
            i++;
         }
         return (short) (i - 1);
+    }
+
+    short[] findLinesNames(String race) throws IOException {
+        short i = 1;
+        short spot = 0;
+        short[] lines = new short[amount()];
+        bufferedReader.reset();
+        line = bufferedReader.readLine();
+        while((line = bufferedReader.readLine()) != null) {
+            if(line.contains(race))
+            {
+                lines[spot] = i;
+                spot++;
+            }
+                    i++;
+        }
+        return lines;
     }
 }
 
