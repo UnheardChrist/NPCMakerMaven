@@ -15,20 +15,21 @@ import static org.example.diceGen.d6;
 public class Main {
     public static void main(String[] args) throws IOException, URISyntaxException {
 
+        String fileName = args[0];
         URL path = ClassLoader.getSystemResource("html/main.html");
         File input = new File(path.toURI());
         Document document = Jsoup.parse(input, "UTF-8");
 
         int[] statsArray = {1, 2, 3, 4, 5, 6};
 
-        writeHTML writeHTML = new writeHTML(document, new File("firstChar.html"),
+        writeHTML writeHTML = new writeHTML(document, new File(fileName),
                 new File("Characters"));
 
         Document charInCharsFolder = writeHTML.openFile();
 
-        Stats stats = new Stats(charInCharsFolder);
-        stats.setStatsToHTML(statsArray);
-        race test = new race();
+        Stats stats = new Stats();
+        //stats.setStatsToHTML(statsArray);
+        character character = new character();
         writeHTML.writeToFile();
     }
 }
@@ -40,16 +41,17 @@ class Stats {
     Element[] statElement;
     int[] stats = {0, 0, 0, 0, 0, 0};
     int[] modifiers = {0, 0, 0, 0, 0, 0};
-    public Stats(Document document) throws IOException, URISyntaxException {
-        this.document = document;
+    public Stats(/*Document document*/) throws IOException, URISyntaxException {
+        //this.document = document;
     }
-
+/*
     public void setStatsFromHTML() {
         int i;
         for(i = 0; i < statNames.length; i++) {
             stats[i] = Integer.parseInt(Objects.requireNonNull(document.getElementById(statNames[i])).text());
         }
     }
+
     void setStatsToHTML(int[] stats) {
         int i;
         Element stat;
@@ -62,6 +64,8 @@ class Stats {
             }
         }
     }
+    */
+
     public void setStats(int[] stats) {
         this.stats = stats;
     }
@@ -120,6 +124,9 @@ class character {
     private int level;
     private int maxHp;
 
+    character() throws IOException, URISyntaxException {
+    }
+
     protected int getMaxHp() {
         return this.maxHp;
     }
@@ -133,6 +140,8 @@ class character {
         this.level = level;
     }
     charClass charClass;
+    race race = new race();
+    Stats stats = new Stats();
 }
 
 class charClass {
@@ -142,19 +151,20 @@ class charClass {
     }
 }
 
-class race extends character{
+class race{
     Random rand = new Random();
     short max, chosen;
     short min = 1;
     String race, line, subRace;
     String[] lineData;
-    short[] subRaces;
     //List<String> traits = new List<String>();
     ArrayList<String> traits = new ArrayList<String>();
     readCSVLine raceCSV = new readCSVLine("DataFiles/Race.csv");
-    readCSVLine subRaceCSV = new readCSVLine("DataFiles/SubRace.csv");
-    int age, size, speed, i;
-    race() throws IOException {
+
+    int age, speed, i;
+    int[] cstat;
+
+    race() throws IOException, URISyntaxException {
 
         max = raceCSV.amount();
         chosen = (short) (rand.nextInt(max - min + 1) + min);
@@ -169,29 +179,8 @@ class race extends character{
         }
         traits.add(lineData[1]);
         System.out.println(traits);
-        subRaces = subRaceCSV.findLinesNames(race);
-        System.out.println(subRaces[0]);
-        System.out.println(subRaces[1]);
-
-
-        for(i = 0; i < subRaces.length && subRaces[i] != 0; i++) {
-            min = 0;
-            max = (short) ((short) i);
-        }
-        if(max == 0) {
-            max = min;
-        }
-        System.out.println(min + " and " + max);
-        chosen = (short) (rand.nextInt(max - min + 1) + min);
-        System.out.println(chosen);
-        line = subRaceCSV.readFileLine(subRaces[chosen]);
-        lineData = line.split(",");
-        System.out.println(lineData[0]);
-        System.out.println(lineData[1]);
-        System.out.println(lineData[2]);
-        System.out.println(lineData[3]);
-        subRace = lineData[1];
-        System.out.println(subRace);
+        subRaces subRacesClass = new subRaces(race);
+        subRacesClass.getTraits();
     }
 
 }
@@ -207,6 +196,7 @@ class writeHTML {
         this.dir = dir;
         this.template = document;
     }
+
     Document openFile() throws IOException {
         filePath = new File(dir.getPath() + "/" + fileName);
         System.out.println(filePath);
