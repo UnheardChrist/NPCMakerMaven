@@ -155,14 +155,14 @@ class race{
     Random rand = new Random();
     short max, chosen;
     short min = 1;
-    String race, line, subRace;
+    String race, line, subRace, size;
     String[] lineData;
     //List<String> traits = new List<String>();
     ArrayList<String> traits = new ArrayList<String>();
     readCSVLine raceCSV = new readCSVLine("DataFiles/Race.csv");
 
     int age, speed, i;
-    int[] cstat;
+    int[] subStats;
 
     race() throws IOException, URISyntaxException {
 
@@ -180,7 +180,13 @@ class race{
         traits.add(lineData[1]);
         System.out.println(traits);
         subRaces subRacesClass = new subRaces(race);
-        subRacesClass.getTraits();
+        Collections.addAll(traits, subRacesClass.getTraits());
+        age = subRacesClass.getAge();
+        subStats = subRacesClass.getSubStats();
+        speed = subRacesClass.getSpeed();
+        size = subRacesClass.getSize();
+        subRace = subRacesClass.getRace();
+
     }
 
 }
