@@ -16,8 +16,6 @@ class subRaces {
 
     subRaces(String race) throws IOException {
         subRaces = subRaceCSV.findLinesNames(race);
-        System.out.println(subRaces[0]);
-        System.out.println(subRaces[1]);
 
         for(i = 0; i < subRaces.length && subRaces[i] != 0; i++) {
             min = 0;
@@ -26,15 +24,15 @@ class subRaces {
         if(max == 0) {
             max = min;
         }
-        System.out.println(min + " and " + max);
         chosen = (short) (rand.nextInt(max - min + 1) + min);
-        System.out.println(chosen);
         line = subRaceCSV.readFileLine(subRaces[chosen]);
         lineData = line.split(",");
-        subRace = lineData[1];
-        System.out.println(subRace);
+
     }
 
+    String getRace() {
+        return lineData[1];
+    }
     int[] getSubStats() {
         for(int i = 0; i < 7; i++) {
             stats[i] = Integer.parseInt(lineData[i + 2]);
@@ -51,8 +49,8 @@ class subRaces {
         return Integer.parseInt(lineData[charStats.SPEED.ordinal()]);
     }
     String[] getTraits() {
-        System.out.println(lineData.length);
-        if(line.contains("\"")) {
+        String lineCopy = line;
+        if(lineCopy.contains("\"")) {
             traits = line.split("\"");
         } else {
             traits = new String[1];
@@ -64,9 +62,7 @@ class subRaces {
                 traits[0] = "";
             }
         }
-        System.out.println("SUBDIVISION");
 
-        System.out.println(traits[0]);
         return traits;
     }
 }
