@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f1e9faa6-d59b-4bdc-9839-515803e5c334" name="Changes" comment="Added get race method for subclass.&#10;Set sub-race information to race.">
-      <change afterPath="$PROJECT_DIR$/src/main/java/org/example/Classes.java" afterDir="false" />
+    <list default="true" id="f1e9faa6-d59b-4bdc-9839-515803e5c334" name="Changes" comment="Added stat update case for Half-Elf">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/subClasses.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/subRaces.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Classes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Classes.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -215,7 +214,14 @@
       <option name="project" value="LOCAL" />
       <updated>1696899488928</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Added stat update case for Half-Elf">
+      <created>1696907699447</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1696907699447</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -241,7 +247,8 @@
     <MESSAGE value="Added function to read randomly from subRaces CSV." />
     <MESSAGE value="Moved reading in of SubClass CSV to subClasses.java&#10;Added enum named charStats" />
     <MESSAGE value="Added get race method for subclass.&#10;Set sub-race information to race." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added get race method for subclass.&#10;Set sub-race information to race." />
+    <MESSAGE value="Added stat update case for Half-Elf" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added stat update case for Half-Elf" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
