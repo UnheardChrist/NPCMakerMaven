@@ -1,6 +1,5 @@
 package org.example;
 
-import javax.swing.*;
 import java.io.IOException;
 import java.util.Random;
 
@@ -34,6 +33,20 @@ class subRaces {
         return lineData[1];
     }
     int[] getSubStats() {
+        min = 0;
+        max = 7;
+        byte rep1, rep2;
+        if(lineData[1] == "Half-Elf") {
+            do {
+                rep1 = (byte) (rand.nextInt(max - min + 1) + min);
+                rep2 = (byte) (rand.nextInt(max - min + 1) + min);
+            }
+            while((rep1 == 6 || rep2 == 6) && rep1 == rep2);
+            stats[rep1] = 1;
+            stats[rep2] = 1;
+            stats[6] = 2;
+            return  stats;
+        }
         for(int i = 0; i < 7; i++) {
             stats[i] = Integer.parseInt(lineData[i + 2]);
         }
