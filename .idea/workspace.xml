@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f1e9faa6-d59b-4bdc-9839-515803e5c334" name="Changes" comment="Added get race method for subclass.&#10;Set sub-race information to race.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/subClasses.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/subClasses.java" afterDir="false" />
-    </list>
+    <list default="true" id="f1e9faa6-d59b-4bdc-9839-515803e5c334" name="Changes" comment="Added get race method for subclass.&#10;Set sub-race information to race." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -208,7 +204,14 @@
       <option name="project" value="LOCAL" />
       <updated>1694191681582</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Added get race method for subclass.&#10;Set sub-race information to race.">
+      <created>1696899488928</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1696899488928</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
