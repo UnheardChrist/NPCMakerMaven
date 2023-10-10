@@ -4,14 +4,14 @@ import java.io.IOException;
 import java.util.Random;
 
 class subRaces {
-    readCSVLine subRaceCSV = new readCSVLine("DataFiles/SubRace.csv");
-    Random rand = new Random();
-    short max, chosen, i;
-    short min = 1;
-    String race, line, subRace;
-    short[] subRaces;
-    String[] lineData, traits;
-    int[] stats = new int[7];
+    private readCSVLine subRaceCSV = new readCSVLine("DataFiles/SubRace.csv");
+    private Random rand = new Random();
+    private short max, chosen, i;
+    private short min = 1;
+    private String race, line, subRace;
+    private short[] subRaces;
+    private String[] lineData, traits;
+    private int[] stats = new int[7];
 
     subRaces(String race) throws IOException {
         subRaces = subRaceCSV.findLinesNames(race);
@@ -34,20 +34,20 @@ class subRaces {
     }
     int[] getSubStats() {
         min = 0;
-        max = 7;
+        max = 5;
         byte rep1, rep2;
         if(lineData[1] == "Half-Elf") {
             do {
                 rep1 = (byte) (rand.nextInt(max - min + 1) + min);
                 rep2 = (byte) (rand.nextInt(max - min + 1) + min);
             }
-            while((rep1 == 6 || rep2 == 6) && rep1 == rep2);
+            while((rep1 == 5 || rep2 == 5) || rep1 == rep2);
             stats[rep1] = 1;
             stats[rep2] = 1;
-            stats[6] = 2;
+            stats[5] = 2;
             return  stats;
         }
-        for(int i = 0; i < 7; i++) {
+        for(int i = 0; i < 6; i++) {
             stats[i] = Integer.parseInt(lineData[i + 2]);
         }
         return stats;

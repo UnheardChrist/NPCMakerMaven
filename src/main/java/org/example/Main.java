@@ -35,12 +35,12 @@ public class Main {
 }
 
 class Stats {
-    Document document;
-    String[] statNames = {"Strength", "Dexterity", "Constitution",
+    private Document document;
+    private String[] statNames = {"Strength", "Dexterity", "Constitution",
             "Intelligence", "Wisdom", "Charisma"};
-    Element[] statElement;
-    int[] stats = {0, 0, 0, 0, 0, 0};
-    int[] modifiers = {0, 0, 0, 0, 0, 0};
+    private Element[] statElement;
+    private int[] stats = {0, 0, 0, 0, 0, 0};
+    private int[] modifiers = {0, 0, 0, 0, 0, 0};
     public Stats(/*Document document*/) throws IOException, URISyntaxException {
         //this.document = document;
     }
@@ -140,26 +140,20 @@ class character {
         this.level = level;
     }
     charClass charClass;
+    Classes classes = new Classes();
     race race = new race();
     Stats stats = new Stats();
 }
 
-class charClass {
-    String charClass;
-    charClass(String charClass) {
-        this.charClass = charClass;
-    }
-}
-
 class race{
-    Random rand = new Random();
-    short max, chosen;
-    short min = 1;
-    String race, line, subRace, size;
-    String[] lineData;
+    private Random rand = new Random();
+    private short max, chosen;
+    private short min = 1;
+    private String race, line, subRace, size;
+    private String[] lineData;
     //List<String> traits = new List<String>();
-    ArrayList<String> traits = new ArrayList<String>();
-    readCSVLine raceCSV = new readCSVLine("DataFiles/Race.csv");
+    private ArrayList<String> traits = new ArrayList<String>();
+    private readCSVLine raceCSV = new readCSVLine("DataFiles/Race.csv");
 
     int age, speed, i;
     int[] subStats;
@@ -169,11 +163,11 @@ class race{
         max = raceCSV.amount();
         chosen = (short) (rand.nextInt(max - min + 1) + min);
         line = raceCSV.readFileLine(chosen);
-        System.out.println(line);
+        //System.out.println(line);
         lineData = line.split(",");
         race = lineData[0];
-        System.out.println(race);
-        //System.out.println(line);
+        //System.out.println(race);
+        System.out.println(line);
         if(line.contains("\"")) {
             lineData = line.split("\"");
         }
@@ -223,11 +217,10 @@ class writeHTML {
 }
 
 class readCSVLine {
-    String fileName;
+    private String fileName;
+    private File file;
 
-    File file;
-
-    BufferedReader bufferedReader;
+    private BufferedReader bufferedReader;
     readCSVLine(String fileName) {
         this.fileName = fileName;
         URL path = ClassLoader.getSystemResource(fileName);
@@ -239,8 +232,8 @@ class readCSVLine {
         }
     }
 
-    byte i = 0;
-    String line;
+    private byte i = 0;
+    private String line;
     String readFileLine(short loc) throws IOException {
         bufferedReader.reset();
         while((line = bufferedReader.readLine()) != null && i != loc)
@@ -280,8 +273,8 @@ class readCSVLine {
 }
 
 class diceGen {
-    static Random rand = new Random();
-    static int max, min;
+    private static Random rand = new Random();
+    private static int max, min;
     static int d2() {
         max = 2;
         min = 1;
