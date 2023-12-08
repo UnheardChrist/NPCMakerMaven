@@ -27,7 +27,6 @@ public class Main {
 
         Document charInCharsFolder = writeHTML.openFile();
 
-        Stats stats = new Stats();
         //stats.setStatsToHTML(statsArray);
         character character = new character();
         writeHTML.writeToFile();
