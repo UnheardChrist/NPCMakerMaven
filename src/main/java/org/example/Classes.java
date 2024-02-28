@@ -21,6 +21,7 @@ public class Classes {
         lineData = line.split(",(?=([^\"]*\"[^\"]*\")*[^\"]*$)");
         //System.out.println(Arrays.toString(lineData));
         className = lineData[charClass.NAME.ordinal()];
+        System.out.println(className);
         hitDice = lineData[charClass.HITDICE.ordinal()];
         armors = lineData[charClass.ARMOR.ordinal()].split(",");
         weapons = lineData[charClass.WEAPONS.ordinal()].split(",");
@@ -45,5 +46,6 @@ public class Classes {
         for (i = 0; i < chosenSkills.length; i++) {
             chosenSkills[i] = skills[chosen.get(i)];
         }
+        System.out.println(Arrays.toString(chosenSkills));
     }
 }

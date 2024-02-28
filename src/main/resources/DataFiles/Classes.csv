@@ -1,2 +1,13 @@
 Class Name,Hit Dice,Armor,Weapons,Tools,Saving Throws,Skills
 Barbarian,1d12,"Light Armor, Medium Armor, Shields","Simple Weapons, Martial Weapons",None,"Strength, Constitution","2, Animal Handling, Athletics, Intimidation, Nature, Perception, Survival"
+Bard,1d8,Light Armor ,"Simple Weapons, Hand Crossbows, Longswords, Rapiers, Shortswords",Three Musical Instruments of Your Choice,"Dexterity, Charisma","3, Any"
+Cleric,1d8,"Light Armor, Medium Armor, Shields",Simple Weapons,None,"Wisdom, Charisma","2, History, Insight, Medicine, Persuasion, Religion"
+Druid,1d8,"Light Armor, Medium Armor, Shields (Druids will not wear armor or use shields made of metal)","Clubs, Daggers, Darts, Javelins, Maces, Quaterstaffs, Scimitars, Sickles, Slings, Spears",Herbalism Kit,"Intelligence, Wisdom","2, Arcana, Animal Handling, insight, Medicine, Nature, Perception, Religion, Survival"
+Fighter,1d10,"All Armor, Shields","Simple Weapons, Martial Weapons",None,"Strength, Constitution","2, Acrobatics, Animal Handling, Athletics, History, Insight, Intimidation, Perception, Survival"
+Monk,1d8,None,"Simple Weapons, Shortswords",One Artisan or Musical Instrument,"Strength, Dexterity","2, Acrobatics, Athletics, History, Insight, Religion, Stealth"
+Paladin,1d10,"All Armor, Shields","Simple Weapons, Martial Weapons",None,"Wisdom, Charisma","2, Athletics, Insight, Intimidation, Medicine, Persuasion, Religion"
+Ranger,1d10,"Light Armor, Medium Armor, Shields","Simple Weapons, Martial Weapons",None,"Strength, Dexterity","3, Animal Handling, Athletics, Insight, Investigation, Nature, Perception, Stealth, Survival"
+Rogue,1d8,Light Armor,"Simple Weapons, Hand Crossbows, Longswords, Rapiers, Shortswords",Thieves' Tools,"Dexterity, Intelligence","4, Acrobatics, Athletics, Deception, Insight, Intimidation, Investiagition, Perception, Performance, Persuasion, Sleight of Hand, Stealth"
+Sorcerer,1d6,None,"Daggers, Darts, Slings, Quarterstaffs, Light Crossbows",None,"Constitution, Charisma","2, Arcana, Deception, Insight, Intimidation, Persuasion, Religion"
+Warlock,1d8,Light Armor,Simple Weapons,None,"Wisdom, Charisma","2, Arcana, Deception, History, Intimidation, Investigation, Nature, Religion"
+Wizard,1d6,None,"Daggers, Darts, Slings, Quarterstaffs, Light Crossbows",None,"Intelligence, Wisdom","2, Arcana, History, Insight, Investigation, Medicine, Religion"
